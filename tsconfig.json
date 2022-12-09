@@ -1,18 +1,25 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "target": "esnext",
+    "useDefineForClassFields": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+  	"rootDir": "./src",
+    "outDir": "./tsbuild",
+    "allowJs": true,
+    "declaration": true,
     "strict": true,
     "jsx": "preserve",
+    "sourceMap": true,
+    "baseUrl": ".",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
+    "lib": ["esnext", "dom"],
     "skipLibCheck": true,
-    "noEmit": true
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "./vite.config.ts"]
 }
