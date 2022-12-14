@@ -10,6 +10,7 @@ interface DBConnConfig {
   password: string;
   port: number;
   database: string;
+  logging: boolean;
 }
 
 interface EnvConf {
@@ -31,8 +32,9 @@ class DBConf {
         host: "localhost",
         user: "root",
         password: "",
-        database: "",
+        database: "bookshelf",
         port: 3306,
+        logging: true,
       },
       prod: {
         host: "prod",
@@ -40,6 +42,7 @@ class DBConf {
         password: "",
         database: "prod",
         port: 3306,
+        logging: true,
       },
     };
   }

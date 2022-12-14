@@ -12,6 +12,8 @@ const gracefulShutdown = (msg: any) => {
 };
 
 SERVER.listen(PORT, () => {
+  console.log("Listen port........", PORT);
+
   // Handle kill commands
   process.on("SIGTERM", gracefulShutdown);
 

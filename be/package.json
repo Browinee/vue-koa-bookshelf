@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --watch ./ -e ts --exec ts-node ./server.ts",
+    "dev": "nodemon  --watch ./ -e ts --exec ts-node ./server.ts",
     "prod": "nodemon --watch ./ -e ts --exec ts-node ./server.ts"
   },
   "keywords": [],
