@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev&& nodemon --watch src/ -e ts --exec ts-node ./server.ts",
-    "prod": "cross-env NODE_ENV=prod&& nodemon --watch src/ -e ts --exec ts-node ./src/app.ts"
+    "dev": "nodemon --watch ./ -e ts --exec ts-node ./server.ts",
+    "prod": "nodemon --watch ./ -e ts --exec ts-node ./server.ts"
   },
   "keywords": [],
   "author": "",

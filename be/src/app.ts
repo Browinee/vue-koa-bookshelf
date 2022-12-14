@@ -6,8 +6,10 @@ import routes from "./routes";
 import { errors, responseTime } from "./middlewares";
 import dotenv from "dotenv";
 import cors from "koa2-cors";
+import Conf from "./config/db";
 
 dotenv.config();
+
 const app = new koa();
 
 app.use(errors);

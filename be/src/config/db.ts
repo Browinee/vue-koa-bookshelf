@@ -1,0 +1,57 @@
+import { debug } from "console";
+
+const isString = (data: unknown): data is string => {
+  return typeof data === "string";
+};
+
+interface DBConnConfig {
+  host: string;
+  user: string;
+  password: string;
+  port: number;
+  database: string;
+}
+
+interface EnvConf {
+  dev: DBConnConfig;
+  prod: DBConnConfig;
+}
+
+class DBConf {
+  static conf: DBConf = new DBConf();
+  env!: keyof EnvConf;
+  envConf!: EnvConf;
+  constructor() {
+    this.env = process.env.NODE_ENV === "dev" ? "dev" : "prod";
+    this.init();
+  }
+  init() {
+    this.envConf = {
+      dev: {
+        host: "localhost",
+        user: "root",
+        password: "",
+        database: "",
+        port: 3306,
+      },
+      prod: {
+        host: "prod",
+        user: "",
+        password: "",
+        database: "prod",
+        port: 3306,
+      },
+    };
+  }
+  getConf(): DBConnConfig;
+  getConf(key: keyof DBConnConfig): string | number;
+  getConf(key?: keyof DBConnConfig): any {
+    if (isString(key) && !!key.length) {
+      return this.envConf[this.env][key];
+    } else {
+      return this.envConf[this.env];
+    }
+  }
+}
+
+export default DBConf.conf;
