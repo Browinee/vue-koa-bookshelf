@@ -5,8 +5,6 @@ import json from "koa-json";
 import routes from "./routes";
 const app = new koa();
 
-const router = new Router();
-router.prefix("/bookshelf");
 app.use(json());
 app.use(body());
 app.use(routes);
