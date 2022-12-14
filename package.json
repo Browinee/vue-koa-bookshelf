@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:fe": "",
-    "dev:be": "",
-
+    "dev:be": "pnpm -F koa-mysql dev ",
+    "dev:fe": "pnpm -F vue-koa-bookshelf dev"
   },
   "keywords": [],
   "author": "",
