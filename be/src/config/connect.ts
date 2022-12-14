@@ -18,4 +18,13 @@ const sequelize = new Sequelize(
   }
 );
 
+// sequelize
+//   .authenticate()
+//   .then(() => {
+//     console.log("Sequelize success");
+//   })
+//   .catch((err) => {
+//     console.log("Sequelize error", err);
+//   });
+
 export default sequelize;

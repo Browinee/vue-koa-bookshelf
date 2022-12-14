@@ -1,5 +1,3 @@
-import { debug } from "console";
-
 const isString = (data: unknown): data is string => {
   return typeof data === "string";
 };
@@ -23,7 +21,7 @@ class DBConf {
   env!: keyof EnvConf;
   envConf!: EnvConf;
   constructor() {
-    this.env = process.env.NODE_ENV === "dev" ? "dev" : "prod";
+    this.env = process.env.NODE_ENV === "dev" ? "dev" : "dev";
     this.init();
   }
   init() {
@@ -31,7 +29,7 @@ class DBConf {
       dev: {
         host: "localhost",
         user: "root",
-        password: "",
+        password: "root1234",
         database: "bookshelf",
         port: 3306,
         logging: true,

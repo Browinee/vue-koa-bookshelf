@@ -36,6 +36,9 @@ const User = sequelize.define(
   {}
 );
 
-User.sync({ force: false });
+// sequelize.sync({ force: false }).then(() => {
+//   console.log("save");
+//   process.exit();
+// });
 
 export default User;
