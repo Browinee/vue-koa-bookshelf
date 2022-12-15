@@ -25,6 +25,7 @@ log4js.configure({
   },
   categories: {
     default: { appenders: ["console"], level: "debug" },
+    info: { appenders: ["info", "console"], level: "info" },
     error: {
       appenders: ["error", "console"],
       level: "error",
@@ -42,4 +43,10 @@ export const error = (content: string) => {
   const logger = log4js.getLogger("error");
   logger.level = LEVELS.error;
   logger.error(content);
+};
+
+exports.info = (content: string) => {
+  let logger = log4js.getLogger("info");
+  logger.level = LEVELS.info;
+  logger.info(content);
 };
