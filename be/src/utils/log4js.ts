@@ -39,13 +39,13 @@ export const debug = (content: string) => {
   logger.debug(content);
 };
 
-export const error = (content: string) => {
+export const error = (content: any) => {
   const logger = log4js.getLogger("error");
   logger.level = LEVELS.error;
   logger.error(content);
 };
 
-exports.info = (content: string) => {
+export const info = (content: any) => {
   let logger = log4js.getLogger("info");
   logger.level = LEVELS.info;
   logger.info(content);

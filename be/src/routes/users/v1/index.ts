@@ -25,11 +25,13 @@ router.post("/", async (ctx) => {
     const userInfo = ctx.request.body;
     console.log("userINfo", ctx.request.body);
 
-    // const result = await User.create(userInfo);
-    // console.log("result", result);
+    const result = await User.create(userInfo);
+    console.log("result", result);
 
     ctx.status = 201;
   } catch (error: any) {
+    console.log("error", error);
+
     // ctx.throw(400, error.message);
   }
 });

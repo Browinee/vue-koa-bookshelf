@@ -26,5 +26,6 @@ const sequelize = new Sequelize(
 //   .catch((err) => {
 //     console.log("Sequelize error", err);
 //   });
+sequelize.sync({ force: false });
 
 export default sequelize;

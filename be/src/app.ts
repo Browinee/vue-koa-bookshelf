@@ -5,13 +5,16 @@ import routes from "./routes";
 import { errors, responseTime } from "./middlewares";
 import dotenv from "dotenv";
 import cors from "koa2-cors";
-import { debug, error } from "./utils/log4js";
+import { debug, error as logError } from "./utils/log4js";
 dotenv.config();
 const app = new koa();
 
 app.use(async (ctx, next) => {
-  await next();
-  error("test");
+  try {
+    await next();
+  } catch (error) {
+    logError(error);
+  }
 });
 app.use(errors);
 app.use(json());
